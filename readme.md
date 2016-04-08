@@ -1,5 +1,17 @@
 # Load Some JSON data into a PostgreSQL DB
 
+## Foreward
+
+The following is a coding challenge. There is also a gist that is revision of this challenge in order to use DataFrames with Spark (Scala) to get similar results. The related Gist at:
+
+https://gist.github.com/codeaperature/b3b007da4c5817ec9fa803b973ef1c25
+
+The Gist is a companion piece showing another way to parse JSON and load a PostgreSQL database with DataFrames. What follows here is a straight Scala implementation.
+
+
+
+## The Exercise:
+
 For this exercise, just build a simple application for pulling and storing different
 kinds of macroeconomic data using the Federal Reserve's FRED API. The FRED API provides a
 RESTful means of accessing many datasets published by the Federal Reserve unemployment
@@ -11,27 +23,25 @@ You'll need to create a FRED user account and API key for yourself, which you ca
 https://research.stlouisfed.org/useraccount/register/step1 . Once you have an account, request your
 API key and use it in your requests.
 
-Requirements:
+### Requirements:
 The application should fetch the following FRED series in their entirety
 Real Gross Domestic Product (GDPC1)
 University of Michigan Consumer Sentiment Index (UMCSENT)
 US Civilian Unemployment Rate (UNRATE)
 Your application should store the observations in a relational database running on localhost.
 
-## Delivery: a zip file containing:
+### Delivery:
 
-
-A SQL script that will create your schema (we use Postgres here, but if you write ANSIstandard
-SQL it shouldn't matter)
-The application source code and instructions for building/executing it
-Your answer to the following question, and the SQL you wrote to answer it:
-What was the average rate of unemployment for each year starting with 1980 and going up to
+1. A SQL script that will create the schema (in this case a Postgres SQL)
+2. The application source code and instructions for building/executing it
+3. Answer to the following question, and the SQL you wrote to answer it:
+4. What was the average rate of unemployment for each year starting with 1980 and going up to
 2015?
 
 
 ## SUMMARY:
 
-This program is converting JSON observations from the FRED
+This program converts JSON observations from the FRED
 and putting those into a PostgreSQL database (named FREDBASE)
 Please set your ENV variables for the DB connection string and the
 your FRED API key.
@@ -281,7 +291,7 @@ IMPORTANT NOTE: Any observations values seen as '.' are considered as zeros.
 
 
 ## COMMENTARY
-This exercise was for a coding challenge for an entrance to an onsite interview. The company shll remain
+This exercise was for a coding challenge for an entrance to an onsite interview. The company shall remain
 anonymous, but there are some Scala how-to things I would like to keep around in my repo - how to get a page,
 how to parse JSON, how to connect wiht JDBC to postgres ... and so forth. 
 
